@@ -5,11 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Map page</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js"
+  integrity="sha512-3Wcxp7F9bV2pl+MBgrL6Pz7AJASLpemmQPIiPA0lDs3ImF0z4JuuMIBPeirLbgIuhfH2gJyGWZjvm6M+Zr7L6Q=="
+  crossorigin=""></script>
   <link rel="stylesheet" type="text/css" href="styles/index.css" />
 </head>
 <body>
 
   <h1>This is the map below: Find restaurants</h1>
+
+  <div id="myMap"></div>
+
+  <form>
+    <fieldset>
+      <label>Define the range: </label>
+      <input type="number" required  min="1"/><br /><br />
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+
+  <script src="scripts/map.js"></script>
 
 </body>
 </html>

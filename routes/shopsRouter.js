@@ -2,7 +2,7 @@ const express = require('express');
 const shopsRouter = express.Router();
 const shopModel = require('../models/shopModel');
 
-shopsRouter.get('/getByDistance', async (req, res, next) => {
+shopsRouter.post('/getByDistance', async (req, res, next) => {
 
   try {
     const allRestaurantsNear = await shopModel.aggregate([{
@@ -12,7 +12,7 @@ shopsRouter.get('/getByDistance', async (req, res, next) => {
         spherical: true,
         distanceField: "dist.calculated"
       }
-    }, {$project: {_id: 0, name: 1, cheapestDish: 1, "dist.calculated": 1}}])
+    }, {$project: {_id: 0}}])
 
     res.status(200).json(allRestaurantsNear);
   }catch (error) {
